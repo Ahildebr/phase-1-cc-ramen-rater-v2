@@ -51,7 +51,7 @@ const displayRamens = () => {
     .catch(error => console.error('Error fetching ramens:', error))
 }
 
-// Event delegation for ramen menu
+// Add event listener to ramen menu
 const addRamenMenuClickListener = () => {
   document.getElementById('ramen-menu').addEventListener('click', (event) => {
     if (event.target.tagName === 'IMG') {
@@ -62,6 +62,7 @@ const addRamenMenuClickListener = () => {
   })
 }
 
+// Add submit listener to new ramen form
 const addSubmitListener = () => {
   const newRamenForm = document.getElementById('new-ramen')
   newRamenForm.addEventListener('submit', (event) => {
@@ -89,8 +90,12 @@ const addSubmitListener = () => {
 
     // Run newRamen through the handleClick function to display it
     handleClick(newRamen)
+    
+    // New ramen form reset
+    newRamenForm.reset()
   })
 }
+
 
 // Main function
 const main = () => {
@@ -98,7 +103,6 @@ const main = () => {
   addRamenMenuClickListener()
   addSubmitListener()
 }
-
 main()
 
 // Export functions for testing
@@ -108,3 +112,4 @@ export {
   handleClick,
   main,
 }
+
