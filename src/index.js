@@ -35,6 +35,7 @@ const handleClick = (ramen) => {
 
 // Fetch and display ramens
 const displayRamens = () => {
+  console.log('Fetching ramens...')
   fetch(`${baseURL}ramens`)
     .then(response => response.json())
     .then(ramens => {
@@ -48,7 +49,6 @@ const displayRamens = () => {
         ramenMenu.appendChild(img)
       })
     })
-    .catch(error => console.error('Error fetching ramens:', error))
 }
 
 // Add event listener to ramen menu
@@ -99,6 +99,7 @@ const addSubmitListener = () => {
 
 // Main function
 const main = () => {
+  console.log('Main function is running')
   displayRamens()
   addRamenMenuClickListener()
   addSubmitListener()
